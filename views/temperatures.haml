@@ -1,0 +1,27 @@
+!!! DOCTYPE html
+
+%html
+  %body
+    - if params[:result] == 'success'
+      %p Update successful
+    %form{name: 'temperatures', action: 'temperatures', method: 'post'}
+      %h1 Temperatures
+      .probes
+        - Temperature::Content::Probes.all.each do |probe|
+          .probe
+            %h2
+              #{probe.name}
+
+            .group
+              %label{for: "#{probe.id}_min"}
+                Min:
+              %input{type: 'text', name: "probes[#{probe.id}][temperatures][min]", id: "#{probe.id}_min", value: probe.min_temperature}
+
+            .group
+              %label{for: "#{probe.id}_max"}
+                Max:
+              %input{type: 'text', name: "probes[#{probe.id}][temperatures][max]", id: "#{probe.id}_max", value: probe.max_temperature}
+
+            %input{type: 'hidden', name: "probes[#{probe.id}][name]", value: probe.name}
+
+      %input{type: 'submit', value: 'Update temperatures'}

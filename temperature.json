@@ -1,0 +1,23 @@
+{"probes": {
+    "sonda_1": {
+        "name": "Sonda 1",
+        "temperatures": {
+            "min": "999.9",
+            "max": "888.8"
+        }
+    },
+    "sonda_2": {
+        "name": "Sonda 2",
+        "temperatures": {
+            "min": "777.7",
+            "max": "666.6"
+        }
+    },
+    "sonda_3": {
+        "name": "Sonda 3",
+        "temperatures": {
+            "min": "555.5",
+            "max": "444.4"
+        }
+    }
+}, "emails": ["pippo1@tin.it", "pippo2@tin.it", "pippo3@tin.it"]}
